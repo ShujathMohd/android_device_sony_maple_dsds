@@ -16,6 +16,10 @@ DEVICE_PATH := device/sony/maple_dsds
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
 
+# Shims
+PRODUCT_PACKAGES += \
+    lib-cacaoshim
+
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi

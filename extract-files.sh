@@ -62,6 +62,9 @@ extract "${MY_DIR}/proprietary-files-vendor.txt" "${SRC}" "${KANG}" --section "$
 
 DEVICE_ROOT="${ANDROID_ROOT}"/vendor/"${VENDOR}"/"${DEVICE}"/proprietary/
 
+#Patch blobs to add shim
+"${PATCHELF}" --add-needed "lib-cacaoshim.so" "${DEVICE_ROOT}"/lib/libcacao_client.so
+
 # Use v28 libprotobuf
 # Using patchelf on them doesn't work for some reason
 sed -i "s|libprotobuf-cpp-lite.so|libpootobuf-cpp-lite.so|g" "${DEVICE_ROOT}"/vendor/lib/libwvhidl.so
