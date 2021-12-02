@@ -64,6 +64,7 @@ DEVICE_ROOT="${ANDROID_ROOT}"/vendor/"${VENDOR}"/"${DEVICE}"/proprietary/
 
 #Patch blobs to add shim
 "${PATCHELF}" --add-needed "lib-cacaoshim.so" "${DEVICE_ROOT}"/lib/libcacao_client.so
+"${PATCHELF}" --add-needed "lib-cacaoshim.so" "${DEVICE_ROOT}"/lib/libcacao_process_ctrl_gateway.so
 
 # Use v28 libprotobuf
 # Using patchelf on them doesn't work for some reason
@@ -83,6 +84,7 @@ function fix_product_path () {
         's/\/system\/framework\//\/system\/product\/framework\//g' \
         "${DEVICE_ROOT}"/"$1"
 }
+
 
 fix_product_path product/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 fix_product_path product/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
