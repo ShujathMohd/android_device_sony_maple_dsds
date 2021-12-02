@@ -861,7 +861,8 @@ vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib/libspcom.so
-vendor/lib64/libperipheral_client.so
+#From Jasmine
+vendor/lib64/libperipheral_client.so||a0dd574c8af3135adae10ef49065fa765906db7a
 vendor/lib64/libspcom.so
 
 # QMI
